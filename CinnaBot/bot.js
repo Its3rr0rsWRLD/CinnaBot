@@ -77,7 +77,7 @@ return '#' + ('00000' + num.toString(16)).substr(-6);
 }
 
 
-await s4d.client.login('OTMzODQ2MzEzOTkxMjg2ODk2.GH3W7J.n-xtPTbHNqO_RZ0GU7OuWGeBe7fyRUQGo_wGQY').catch((e) => {
+await s4d.client.login('Bot Token').catch((e) => {
 s4d.tokenInvalid = true;
 s4d.tokenError = e;
 if (e.toString().toLowerCase().includes("token")) {
