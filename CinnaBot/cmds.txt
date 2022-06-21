@@ -1,0 +1,11 @@
+**All of our games: `!games`**
+
+**Add a suggestion: `!suggest`**
+
+**See all of <@760246873684050011>'s projects: `!projects`**
+
+**See all commands: !help**
+
+**See the bot's uptime: `!uptime`**
+
+**See info about the server: `!about`**

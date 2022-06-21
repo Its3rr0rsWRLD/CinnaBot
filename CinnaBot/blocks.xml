@@ -1,0 +1,1633 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="=6`ushn0ewC41R$-^dvJ">prefix</variable>
+    <variable id="OZ0l|^XRQH?T?s;b$B%X">arguments</variable>
+    <variable id="9p=y^o3Q9D#i[*`~t8Qd">commandwithprefix</variable>
+    <variable id="[7EY2U|H!lFwE*bfnrI|">uptime_var</variable>
+    <variable id="g}=!gJT)28-q*[T#/,lh">giveaway_channel</variable>
+    <variable id="dN-GQox{6nqmX%so5NT^">command</variable>
+    <variable id="env4)aA-ZE6J=pk,T+W4">giveaway_duration</variable>
+    <variable id="9co??q(b8}a05@{;ObBR">giveaway_winners</variable>
+    <variable id="0bLfwJ^4=JPmkY,iA3b4">backups</variable>
+    <variable id="Kh[b(|#KXXcrVD252aAe">giveaway_prize</variable>
+  </variables>
+  <block type="s4d_login" id="{|lO_b-0fA9`}/b6#m6T" x="0" y="0">
+    <value name="TOKEN">
+      <block type="text" id="T3=]`vNu7E~Pv%]r^%YC">
+        <field name="TEXT">OTMzODQ2MzEzOTkxMjg2ODk2.GH3W7J.n-xtPTbHNqO_RZ0GU7OuWGeBe7fyRUQGo_wGQY</field>
+      </block>
+    </value>
+  </block>
+  <block type="s4d_message_author" id="aN`DuV^6Nr;HQe_+%_Jz" x="0" y="0"></block>
+  <block type="s4d_message_author" id="GSaB:{D@M^d^!Tz7W,iu" x="0" y="0"></block>
+  <block type="s4d_mentioned_member" id="(TUc1g=HgIJ~!CbW~~t*" x="0" y="0"></block>
+  <block type="s4d_on_connected" id="HcFcs6Jw;M1hHa#=JL9n" x="-238" y="72">
+    <statement name="STATEMENTS">
+      <block type="variables_set" id="GZDP:Red|*ajsbPV}guA">
+        <field name="VAR" id="=6`ushn0ewC41R$-^dvJ">prefix</field>
+        <value name="VALUE">
+          <block type="text" id="[iP}[(^%wkCP!|kzFvV/">
+            <field name="TEXT">!</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="!JTp;cLA*`C,`@n,mX6k">
+            <value name="IF0">
+              <block type="logic_negate" id="B,7g=,kYZ@.|w,VnI;v!">
+                <value name="BOOL">
+                  <block type="s4d_has_data" id="/H)#?X=Xlm7e_GB1~83v">
+                    <value name="KEY">
+                      <shadow type="text" id="^*xQ|=V9u/D/NZizW#:4">
+                        <field name="TEXT">backups</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="s4d_set_data" id="2dPjKht|aM#L3mS-1U6@">
+                <value name="KEY">
+                  <shadow type="text" id="|6i3Ll9n|L{c0sD2/g=n">
+                    <field name="TEXT">backups</field>
+                  </shadow>
+                </value>
+                <value name="VALUE">
+                  <shadow type="text" id="g8E.D|6djn*u:Dzk]37S">
+                    <field name="TEXT">world</field>
+                  </shadow>
+                  <block type="lists_create_with" id="ylaB;%(Jw6dH`%q[4PoG">
+                    <mutation items="0"></mutation>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="t/i|On;[hw~0pIn$natP" x="-2953" y="289">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="sJgS%yL%SZtCU15*lMG[">
+        <value name="IF0">
+          <block type="logic_compare" id="2Jyz^|O,?mb,Po:2A8P/">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_message_content" id="nLh1-O`:Y.$n#Xco{X7d"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="%fn8a*NgWcW%CQ,fKK5:">
+                <field name="TEXT">!about</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_m_create_embed_then" id="81(n2j=qemL9bK=]=qx9">
+            <statement name="THEN">
+              <block type="s4d_m_create_embed_then_set_color" id="=_*yYi3dP6;2E0w~Ff_5">
+                <value name="COLOR">
+                  <block type="colour_random" id="2~vH_9!s:T$g:+JUIJaq"></block>
+                </value>
+                <next>
+                  <block type="s4d_m_create_embed_then_set_title" id="|tggOkfsd~#v|#U1F)2?">
+                    <value name="TITLE">
+                      <block type="text" id="A6F2gzu9wo_rT8}foTmr">
+                        <field name="TEXT">Information about the server</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="s4d_m_create_embed_then_add_field" id="dDHAY}S?/e]mJkC.VmQ~">
+                        <value name="TITLE">
+                          <block type="text" id="h`9P9Jj%6Q|bs{!`|sOd">
+                            <field name="TEXT">Name of Server</field>
+                          </block>
+                        </value>
+                        <value name="DESCRIPTION">
+                          <block type="s4d_server_name" id="51r/|q,a+_FhQ+mcM6Ol">
+                            <value name="SERVER">
+                              <block type="s4d_message_guild" id="X{?vfcO)=RNPDttCaBQk"></block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="s4d_m_create_embed_then_add_field" id="p~XB._=gET|_h@)q,0uK">
+                            <value name="TITLE">
+                              <block type="text" id="O+@Gyn+8p!LowBP+kVOo">
+                                <field name="TEXT">Number of Members</field>
+                              </block>
+                            </value>
+                            <value name="DESCRIPTION">
+                              <block type="text_join" id="?^lYSB($x_c_xJRbeQ,f">
+                                <mutation items="1"></mutation>
+                                <value name="ADD0">
+                                  <block type="s4d_member_count" id="1nmEv?@cE@)?AMgospU(">
+                                    <value name="SERVER">
+                                      <block type="s4d_message_guild" id="Xhk7prr0%_njtUkKz.fD"></block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="s4d_m_create_embed_then_add_field" id="9Wp0E_NAm.$]_XP)_!yM">
+                                <value name="TITLE">
+                                  <block type="text" id="s)XP@8wupWq^_%gIQfWC">
+                                    <field name="TEXT">Icon URL</field>
+                                  </block>
+                                </value>
+                                <value name="DESCRIPTION">
+                                  <block type="s4d_icon_url" id="`94UJt%5VZdCFnuuLLhj">
+                                    <value name="SERVER">
+                                      <block type="s4d_message_guild" id="zWM3Jn;$I58B:3DuV`vZ"></block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="s4d_m_create_embed_then_add_field" id="llSC#Vw_xyWMC@E@;mT8">
+                                    <value name="TITLE">
+                                      <block type="text" id="b*bEE{e?R{n3k]S3cV-h">
+                                        <field name="TEXT">Boost Level</field>
+                                      </block>
+                                    </value>
+                                    <value name="DESCRIPTION">
+                                      <block type="text_join" id="{rvq|Vlk=-mep~tMiUg-">
+                                        <mutation items="1"></mutation>
+                                        <value name="ADD0">
+                                          <block type="s4d_boost_level" id=".V|(5w`)Fq+7E*mCZesh">
+                                            <value name="SERVER">
+                                              <block type="s4d_message_guild" id="vGUzkOB5dL,c1MmMOTMn"></block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="s4d_m_create_embed_then_add_field" id="ly`I2q{W_NbmzBQa|B;o">
+                                        <value name="TITLE">
+                                          <block type="text" id="9h2o%oUsDQNUZ#z93b,@">
+                                            <field name="TEXT">Owner Id</field>
+                                          </block>
+                                        </value>
+                                        <value name="DESCRIPTION">
+                                          <block type="s4d_server_owner" id="w=C[3R_]yGp.hog/.h5j">
+                                            <value name="SERVER">
+                                              <block type="s4d_message_guild" id="b=!l|!$P-@X?8[aHUOsv"></block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="s4d_m_create_embed_then_add_field" id="9S+DgjuNk.~yy=b)me2}">
+                                            <value name="TITLE">
+                                              <block type="text" id="g]cDYK4Ny+LE%KJ;Ds.T">
+                                                <field name="TEXT">No. of Bots</field>
+                                              </block>
+                                            </value>
+                                            <value name="DESCRIPTION">
+                                              <block type="text_join" id="Q9X(eDf)]0MO,ZJu*;Y3">
+                                                <mutation items="1"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="s4d_number_of__server" id="u/XXzf:s!|uA|t1py#?4">
+                                                    <field name="OF_THIS">BOT</field>
+                                                    <value name="SERVER">
+                                                      <block type="s4d_message_guild" id="j9Xtl_z;;Ny9Z)-oA@xt"></block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="s4d_m_create_embed_then_add_field" id="dr5d5XMClg8DxcXZNF]j">
+                                                <value name="TITLE">
+                                                  <block type="text" id="ZuZQ{$z~)!aqRT~wL)A^">
+                                                    <field name="TEXT">No. of Channels</field>
+                                                  </block>
+                                                </value>
+                                                <value name="DESCRIPTION">
+                                                  <block type="text_join" id="iRstz7^EU-@aZkh}~~?V">
+                                                    <mutation items="1"></mutation>
+                                                    <value name="ADD0">
+                                                      <block type="s4d_number_of__server" id="FrXxzZrRDXRI*(.I$SKm">
+                                                        <field name="OF_THIS">CHANNELS</field>
+                                                        <value name="SERVER">
+                                                          <block type="s4d_message_guild" id="aS0.uUV|e-c$kXq6X,mX"></block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="s4d_m_create_embed_then_add_field" id="KkZRzD5_a5s(+S2D]xxM">
+                                                    <value name="TITLE">
+                                                      <block type="text" id="(ns,z/HP%|s|y*/8z3Cy">
+                                                        <field name="TEXT">No. of Roles</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="DESCRIPTION">
+                                                      <block type="text_join" id="1P+(-GM{3PPGvZkO{5n`">
+                                                        <mutation items="1"></mutation>
+                                                        <value name="ADD0">
+                                                          <block type="s4d_number_of__server" id="=7:hX.Iww:S(W39N2N[_">
+                                                            <field name="OF_THIS">ROLES</field>
+                                                            <value name="SERVER">
+                                                              <block type="s4d_message_guild" id="fzwb8vUy{G~x}wcD*;8H"></block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="s4d_m_create_embed_then_add_field" id="bJS=JtvJPV+UTiTK9^,v">
+                                                        <value name="TITLE">
+                                                          <block type="text" id="qJP+S5*}pda)-cqu7Akk">
+                                                            <field name="TEXT">No. of Voice Channels</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="DESCRIPTION">
+                                                          <block type="text_join" id=":H03Rr$/Jw%YH7Cb3aIM">
+                                                            <mutation items="1"></mutation>
+                                                            <value name="ADD0">
+                                                              <block type="s4d_number_of__server" id="P8u/x|O:Y.4Dy)MwyFPw">
+                                                                <field name="OF_THIS">VOICE</field>
+                                                                <value name="SERVER">
+                                                                  <block type="s4d_message_guild" id="sO1mFpl!T@@b=JaXCP_5"></block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="s4d_m_create_embed_then_add_field" id="m|bFO]X$!EMyV0/xoe9n">
+                                                            <value name="TITLE">
+                                                              <block type="text" id="xqZBmWC}K2Q()Zmnboij">
+                                                                <field name="TEXT">No. of Text Channels</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="DESCRIPTION">
+                                                              <block type="text_join" id="(5[VbR5Gainc.8/K!+W^">
+                                                                <mutation items="1"></mutation>
+                                                                <value name="ADD0">
+                                                                  <block type="s4d_number_of__server" id="DAfj6`1mUX{mv35p*y3%">
+                                                                    <field name="OF_THIS">TEXT</field>
+                                                                    <value name="SERVER">
+                                                                      <block type="s4d_message_guild" id="./Irq2TH!I$BXh}FcY:n"></block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="s4d_m_create_embed_then_send" id="-%w-?)vc^+UGyeRk3Nwm">
+                <value name="CHANNEL">
+                  <block type="s4d_message_channel" id="T6.9a2MjF=ROt@m|X)5s"></block>
+                </value>
+                <value name="TEXT">
+                  <block type="text" id="Z8I;|uz(E_nrPagd|98-">
+                    <field name="TEXT">About the Server!</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_member_join" id="@A-FRU(ln7*5?Ll2opfq" x="1615" y="231">
+    <statement name="STATEMENTS">
+      <block type="s4d_send_in_channel" id="?.*^@g[z9YmoD4u%PY(C">
+        <field name="INTERACTION">message</field>
+        <value name="CONTENT">
+          <block type="text_join" id="wAe~rSVV+!j85q`Deb[4">
+            <mutation items="3"></mutation>
+            <value name="ADD0">
+              <block type="text" id="PqNb;EYPqKI?GFMRC-OD">
+                <field name="TEXT">Welcome </field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="s4d_joining_member" id="I)?q/~n8)q~j;M#,YszK"></block>
+            </value>
+            <value name="ADD2">
+              <block type="text" id="=3*0@W;m-DDfqdR.ug]!">
+                <field name="TEXT">!</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="CHANNEL">
+          <block type="s4d_get_channel" id="@-W5la0o8K6(+_!?:iNY">
+            <field name="SEARCH_TYPE">ID</field>
+            <value name="VALUE">
+              <block type="text" id="Q?c/Y+vhiCUdhHPc5I@+">
+                <field name="TEXT">983102272777109505</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="GW">
+          <block type="s4d_create_welcome_then" id="vW6+b9QKX+^@;^pdl%.,">
+            <statement name="THEN">
+              <block type="s4d_set_background" id="wDv/|C^:mTxl1I3j1=,[">
+                <value name="STRING">
+                  <block type="text" id="U%RL.,-p:;Sl*(5--DYl">
+                    <field name="TEXT">https://cdn.discordapp.com/attachments/931776786608558150/983072838959374336/Cinnamon_Studios.png</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="s4d_set_username" id=";|6IJ1amny#!h,1=5|)K">
+                    <value name="STRING">
+                      <block type="s4d_joining_member_raw" id="Ql6Aid5u`6q~[zTEMyuM">
+                        <field name="SEARCH_TYPE">USERNAME</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="s4d_set_avatar" id="MuT:)DNz]L4@@{%=zx##">
+                        <value name="STRING">
+                          <block type="s4d_member_icon" id="??$tnd;@RIVz3h7sH1w?">
+                            <value name="MEMBER">
+                              <block type="s4d_joining_member" id="Y%HoP/Np5p+km,gZ}Nv["></block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="s4d_set_guild_name" id="WztG0]U_xA4m0:E5czOI">
+                            <value name="STRING">
+                              <block type="s4d_server_name" id="NLsKR`P.7:Lt3TlEb]or">
+                                <value name="SERVER">
+                                  <block type="s4d_joining_guild" id="=stVL+M^D@v1vPOCsS{]"></block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="s4d_set_member_count" id="Y,3a(OC!Py[Z,qPYcC#`">
+                                <value name="STRING">
+                                  <block type="s4d_member_count" id="[eM370GXNea_!Ocm@=q{">
+                                    <value name="SERVER">
+                                      <block type="s4d_joining_guild" id="dXJ#Q^O4^Diw|w1.oI%K"></block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="s4d_set_discriminator" id="ngi7?.#}1mAWgqF6Kp+6">
+                                    <value name="STRING">
+                                      <block type="s4d_member_discriminator" id="1$])=q;d=YjXq/SJ@`Wr">
+                                        <value name="MEMBER">
+                                          <block type="s4d_joining_member" id="|^1r?W!OOXtR=UgYvhm."></block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="s4d_set_color" id="ASvlestO.QB0ZDHp?b5T">
+                                        <field name="TYPE">username</field>
+                                        <value name="COLOR">
+                                          <block type="colour_picker" id="!^b%OS,!au~g0=z=#GqR">
+                                            <field name="COLOUR">#ffffff</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="s4d_set_color" id="W5j?S.l~(a.vUvPnNNBY">
+                                            <field name="TYPE">title</field>
+                                            <value name="COLOR">
+                                              <block type="colour_picker" id="),AO!UI7iYn@UDF@7].h">
+                                                <field name="COLOUR">#6633ff</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="s4d_set_color" id="%.pt^9j;fZ9]$xKGjfR*">
+                                                <field name="TYPE">border</field>
+                                                <value name="COLOR">
+                                                  <block type="colour_picker" id="mg4od3!=C/j+Dlegpe50">
+                                                    <field name="COLOUR">#000000</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="s4d_set_color" id="kKIRRehKO[TeK@UtF82n">
+                                                    <field name="TYPE">member-count</field>
+                                                    <value name="COLOR">
+                                                      <block type="colour_picker" id="S=Hb5x#9IUPxw!9omrwE">
+                                                        <field name="COLOUR">#66ffff</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="s4d_set_color" id="vIe]e8I#W8sH}VQC_NM8">
+                                                        <field name="TYPE">avatar</field>
+                                                        <value name="COLOR">
+                                                          <block type="colour_picker" id="7]wLzfCm:Jjoa1~LhP|J">
+                                                            <field name="COLOUR">#3366ff</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="=2rsdOm}YOsu[v`A}mD," x="-1683" y="419">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id=";^2f6SpHVYs0*[69SB{O">
+        <value name="IF0">
+          <block type="s4d_member_has_permission" id="]@eWw$X{HOEVc)=OR5(L">
+            <field name="PERMISSION">MANAGE_GUILD</field>
+            <value name="MEMBER">
+              <block type="s4d_message_author" id=".[p1,q+=],YgoMrY4Rr/"></block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="controls_if" id="M$bxxLGhP7NJT1yO!=aO">
+            <mutation elseif="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="PMH)K]BH3C-`{GsZ]|A1">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="s4d_message_content" id="0DR7/_6bIYX?j2YqraC["></block>
+                </value>
+                <value name="B">
+                  <block type="text" id="Dpx[E9Q#LW7PdE1V2{Wg">
+                    <field name="TEXT">!giveaway</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="s4d_send_wait_reply" id="b?-.,]TrH)Ri9-NM7erS">
+                <value name="CONTENT">
+                  <shadow type="text" id="Eg@.5SXTt(1vf^*~fwEF">
+                    <field name="TEXT">Which channel do you wanna host the giveaway in?</field>
+                  </shadow>
+                </value>
+                <value name="CHANNEL">
+                  <block type="s4d_message_channel" id="0kC(waoI[7ibC.myS![)"></block>
+                </value>
+                <value name="MEMBER">
+                  <block type="s4d_message_author" id="_[FJ-O*F|IM3t|),6h{c"></block>
+                </value>
+                <value name="TIME">
+                  <shadow type="math_number" id="(?r#|/O:[Dav^;wv}c4`">
+                    <field name="NUM">5</field>
+                  </shadow>
+                </value>
+                <statement name="THEN">
+                  <block type="variables_set" id="B|pL0H*BXxNEyRAdj]SJ">
+                    <field name="VAR" id="g}=!gJT)28-q*[T#/,lh">giveaway_channel</field>
+                    <value name="VALUE">
+                      <block type="reply_mentioned_channel" id="@cWG/Z.fZBOnQ%dWuH6C"></block>
+                    </value>
+                    <next>
+                      <block type="s4d_send_wait_reply" id="0TT_c,@2Zov/w*%cAm=m">
+                        <value name="CONTENT">
+                          <shadow type="text" id="V}(|,a[N66X98ZR/ef;e">
+                            <field name="TEXT">Duration of giveaway? (in milliseconds)</field>
+                          </shadow>
+                        </value>
+                        <value name="CHANNEL">
+                          <block type="s4d_message_channel" id="j#^Gz{s^YlkDx?K`C{ES"></block>
+                        </value>
+                        <value name="MEMBER">
+                          <block type="s4d_message_author" id="rIW0`4j=yR7[E;W}2wv#"></block>
+                        </value>
+                        <value name="TIME">
+                          <shadow type="math_number" id="c)nKDChb?%e-YJ#Z{|0d">
+                            <field name="NUM">5</field>
+                          </shadow>
+                        </value>
+                        <statement name="THEN">
+                          <block type="variables_set" id="rguS6n,_TN:6*?|cw[7O">
+                            <field name="VAR" id="env4)aA-ZE6J=pk,T+W4">giveaway_duration</field>
+                            <value name="VALUE">
+                              <block type="s4d_send_wait_reply_value" id="(k%wONIv~D)4lje45HhT"></block>
+                            </value>
+                            <next>
+                              <block type="s4d_send_wait_reply" id="/YWjS=w7iuB2U([57Q^a">
+                                <value name="CONTENT">
+                                  <shadow type="text" id=":/IBD)O9~dx+_A{mcN!r">
+                                    <field name="TEXT">Number of winners?</field>
+                                  </shadow>
+                                </value>
+                                <value name="CHANNEL">
+                                  <block type="s4d_message_channel" id="4Z|dV4hwu8#@nch}?.~$"></block>
+                                </value>
+                                <value name="MEMBER">
+                                  <block type="s4d_message_author" id="!^+-/*B4Gx8fLb^/636L"></block>
+                                </value>
+                                <value name="TIME">
+                                  <shadow type="math_number" id="7-_x|:%QG9@^X%)0qHy/">
+                                    <field name="NUM">5</field>
+                                  </shadow>
+                                </value>
+                                <statement name="THEN">
+                                  <block type="variables_set" id="[E!:Apfly|t=QhK6DLmW">
+                                    <field name="VAR" id="9co??q(b8}a05@{;ObBR">giveaway_winners</field>
+                                    <value name="VALUE">
+                                      <block type="s4d_send_wait_reply_value" id="Yq/dk0Cgagi:(7oE(oTw"></block>
+                                    </value>
+                                    <next>
+                                      <block type="s4d_send_wait_reply" id="a[SO*PH5yS4Q*Gj=1|]~">
+                                        <value name="CONTENT">
+                                          <shadow type="text" id=";l1FL;W,x!Y3M;$07+Fa">
+                                            <field name="TEXT">Prize?</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="CHANNEL">
+                                          <block type="s4d_message_channel" id="=OX?49E,vX}[bZ7CyTzw"></block>
+                                        </value>
+                                        <value name="MEMBER">
+                                          <block type="s4d_message_author" id="hP(}6jsjpo+:IBV^OJXs"></block>
+                                        </value>
+                                        <value name="TIME">
+                                          <shadow type="math_number" id=")WMq/=uX;v}?PtIgdllv">
+                                            <field name="NUM">5</field>
+                                          </shadow>
+                                        </value>
+                                        <statement name="THEN">
+                                          <block type="variables_set" id="/NuY,KRGs+T0@kMRZ$(i">
+                                            <field name="VAR" id="Kh[b(|#KXXcrVD252aAe">giveaway_prize</field>
+                                            <value name="VALUE">
+                                              <block type="s4d_send_wait_reply_value" id="]odj_.:v2]s)sir=DxJc"></block>
+                                            </value>
+                                            <next>
+                                              <block type="s4d_create_giveaway" id="hRx9yWW}5B*tf;L.70f~">
+                                                <value name="CHANNEL">
+                                                  <block type="variables_get" id="kWBNvLXS!zWmD)um@=7E">
+                                                    <field name="VAR" id="g}=!gJT)28-q*[T#/,lh">giveaway_channel</field>
+                                                  </block>
+                                                </value>
+                                                <value name="DURATION">
+                                                  <block type="variables_get" id="x*ls$)b+{#sG]S#3DG40">
+                                                    <field name="VAR" id="env4)aA-ZE6J=pk,T+W4">giveaway_duration</field>
+                                                  </block>
+                                                </value>
+                                                <value name="WINNERS">
+                                                  <block type="variables_get" id="KGilcW{#JJy`36gl_e2;">
+                                                    <field name="VAR" id="9co??q(b8}a05@{;ObBR">giveaway_winners</field>
+                                                  </block>
+                                                </value>
+                                                <value name="PRIZE">
+                                                  <block type="variables_get" id="g#tI5zId#LAAs[_gWk4u">
+                                                    <field name="VAR" id="Kh[b(|#KXXcrVD252aAe">giveaway_prize</field>
+                                                  </block>
+                                                </value>
+                                                <statement name="THEN">
+                                                  <block type="s4d_send_channel" id="]IRL8?^?Wp?xh-Upo`3?">
+                                                    <value name="CONTENT">
+                                                      <block type="text" id="[{r!9q`YOpMgAD!d5KA2">
+                                                        <field name="TEXT">Started Giveaway</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="CHANNEL">
+                                                      <block type="s4d_message_channel" id="8RQV`Oht8dtC}O__-H9:"></block>
+                                                    </value>
+                                                  </block>
+                                                </statement>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <statement name="CATCH">
+                                          <block type="s4d_send_channel" id="s+NLGMZ(tH{#D)~L82Ax">
+                                            <value name="CONTENT">
+                                              <block type="text" id="m|4i=UX`n]h^9L@AOP[H">
+                                                <field name="TEXT">No prize mentioned</field>
+                                              </block>
+                                            </value>
+                                            <value name="CHANNEL">
+                                              <block type="s4d_message_channel" id="?I|g-{m1iA@Cc5BCT}73"></block>
+                                            </value>
+                                            <next>
+                                              <block type="s4d_return" id="b4a$%]x16,d-mFyE@!xb"></block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <statement name="CATCH">
+                                  <block type="s4d_send_channel" id="hOPWOG6)|UaQGW[ulV(s">
+                                    <value name="CONTENT">
+                                      <block type="text" id="~3@-Ps)1x3lLuGB/%0|k">
+                                        <field name="TEXT">Number not mentioned!</field>
+                                      </block>
+                                    </value>
+                                    <value name="CHANNEL">
+                                      <block type="s4d_message_channel" id="^BG{,![=GoFiC#pWroE!"></block>
+                                    </value>
+                                    <next>
+                                      <block type="s4d_return" id="=t(y1Fhx_9oc(C=ghx_I"></block>
+                                    </next>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <statement name="CATCH">
+                          <block type="s4d_send_channel" id="vPWO6ms(F!VQK7x5m7{,">
+                            <value name="CONTENT">
+                              <block type="text" id="_rL+9F-c1+!Ot9jJN968">
+                                <field name="TEXT">No duration mentioned!</field>
+                              </block>
+                            </value>
+                            <value name="CHANNEL">
+                              <block type="s4d_message_channel" id="j:65qF{kUF)2:oXYp2o+"></block>
+                            </value>
+                            <next>
+                              <block type="s4d_return" id="_KS2zBa2!|8XMg0c|Xul"></block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <statement name="CATCH">
+                  <block type="s4d_send_channel" id="B.Wb,?8BE]6i,|,!F~no">
+                    <value name="CONTENT">
+                      <block type="text" id=":Bdjm%UOd!w@IcR?AZMb">
+                        <field name="TEXT">No channel mentioned!</field>
+                      </block>
+                    </value>
+                    <value name="CHANNEL">
+                      <block type="s4d_message_channel" id="VO#_0qcSFlgG[Q1Cz%-i"></block>
+                    </value>
+                    <next>
+                      <block type="s4d_return" id="Jk+5S|UVt5jV7S1xbB.m"></block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_compare" id="X`4u.DMzcuR{8euHYpM6">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="s4d_message_content" id="JpKiYK{)y#.5IC748/@p"></block>
+                </value>
+                <value name="B">
+                  <block type="text" id="9!_wVXkq:M!N;Tq2:WpL">
+                    <field name="TEXT">!reroll</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="s4d_send_wait_reply" id="[23nTzK1WJ|mYITg;JKX">
+                <value name="CONTENT">
+                  <shadow type="text" id="V+^;!1{2U-U*NTdJ}2i!">
+                    <field name="TEXT">Id of giveaway</field>
+                  </shadow>
+                </value>
+                <value name="CHANNEL">
+                  <block type="s4d_message_channel" id="-|ZJ:X7KGwn@smuGRE8V"></block>
+                </value>
+                <value name="MEMBER">
+                  <block type="s4d_message_author" id="rG!e{UThNZZHr,,+|-6?"></block>
+                </value>
+                <value name="TIME">
+                  <shadow type="math_number" id="uFv[I0|$|@k!bjFx4p~]">
+                    <field name="NUM">5</field>
+                  </shadow>
+                </value>
+                <statement name="THEN">
+                  <block type="s4d_dd_giveaway" id="_V2ECm}/9*n;e,9wPA[W">
+                    <field name="TYPE">reroll</field>
+                    <value name="ID">
+                      <block type="s4d_send_wait_reply_value" id="iLdL*}TdN9?~P3[W;3NA"></block>
+                    </value>
+                    <statement name="THEN">
+                      <block type="s4d_send_channel" id="rz:7+FT^hD);dc71ctus">
+                        <value name="CONTENT">
+                          <block type="text" id="Ky50X@9=[*N+v(@SIDvC">
+                            <field name="TEXT">Re-rolled the giveaway!</field>
+                          </block>
+                        </value>
+                        <value name="CHANNEL">
+                          <block type="s4d_message_channel" id="Ac7rrW+xtM6;[iY`jBu]"></block>
+                        </value>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+                <statement name="CATCH">
+                  <block type="s4d_send_channel" id="kdo0j:#~-kjg@9dlJvmO">
+                    <value name="CONTENT">
+                      <block type="text" id="W{TGR@s_;4;(t6a_E0yP">
+                        <field name="TEXT">No ID mentioned!</field>
+                      </block>
+                    </value>
+                    <value name="CHANNEL">
+                      <block type="s4d_message_channel" id="=lrHQh(~V`rr=IQL`0Bs"></block>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="+Q@qA4DZ.)H0dU~:qJFA" x="95" y="373">
+    <statement name="STATEMENTS">
+      <block type="variables_set" id="Fo+ksP#~73~o,EeQmq{u">
+        <field name="VAR" id="OZ0l|^XRQH?T?s;b$B%X">arguments</field>
+        <value name="VALUE">
+          <block type="lists_split" id="1YzV9Eu2@GGwP5RREIIR">
+            <mutation mode="SPLIT"></mutation>
+            <field name="MODE">SPLIT</field>
+            <value name="INPUT">
+              <block type="s4d_message_content" id="E#m(;pB|W+d+AtJCc{5e"></block>
+            </value>
+            <value name="DELIM">
+              <shadow type="text" id="Z.|mO+X9gt-/BR;jjMkI">
+                <field name="TEXT"> </field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="U^i0Ox!/+F6x[NrTqTpR">
+            <field name="VAR" id="9p=y^o3Q9D#i[*`~t8Qd">commandwithprefix</field>
+            <value name="VALUE">
+              <block type="lists_getIndex" id="9ul#e70.^`!G^_~-BlK~">
+                <mutation statement="false" at="true"></mutation>
+                <field name="MODE">GET_REMOVE</field>
+                <field name="WHERE">FROM_START</field>
+                <value name="VALUE">
+                  <block type="variables_get" id="z-Mavm-5KXE/Y;G)]0%i">
+                    <field name="VAR" id="OZ0l|^XRQH?T?s;b$B%X">arguments</field>
+                  </block>
+                </value>
+                <value name="AT">
+                  <block type="math_number" id="n6Es1J;;TYupl;g]g)Eg">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id=":?dbb:vF_|qdqgb%:qkF">
+                <value name="IF0">
+                  <block type="logic_negate" id="RqylI(;v4!65RY+YMU;,">
+                    <value name="BOOL">
+                      <block type="s4d_member_is_bot" id="CR9ZM2Pst0-d#-h!^Mb-">
+                        <value name="MEMBER">
+                          <block type="s4d_message_author" id="kP(!s^R3xmakry3pOAu-"></block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="controls_if" id="?0_$Y+BD1xxSa0KA1t.,">
+                    <value name="IF0">
+                      <block type="s4d_starts_with" id="[DhMa1*^%sHH}OksH^ME">
+                        <value name="STRING">
+                          <shadow type="text" id="iMH.F@gOp=IV:%r$~sSK">
+                            <field name="TEXT">abc</field>
+                          </shadow>
+                          <block type="variables_get" id=",-bX4=FVdN5l;kLY*Q3l">
+                            <field name="VAR" id="9p=y^o3Q9D#i[*`~t8Qd">commandwithprefix</field>
+                          </block>
+                        </value>
+                        <value name="SUBSTRING">
+                          <shadow type="text" id="xwE0]+?l@G3~],}}ymCg">
+                            <field name="TEXT">a</field>
+                          </shadow>
+                          <block type="variables_get" id="VfKek(*Bv2_ut)Hi##?:">
+                            <field name="VAR" id="=6`ushn0ewC41R$-^dvJ">prefix</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="variables_set" id="2}t[rFyvtZ`O=Qr%1$#0">
+                        <field name="VAR" id="dN-GQox{6nqmX%so5NT^">command</field>
+                        <value name="VALUE">
+                          <block type="text_getSubstring" id="tk/+|mA*Z|4~B9|.CuKM">
+                            <mutation at1="true" at2="false"></mutation>
+                            <field name="WHERE1">FROM_START</field>
+                            <field name="WHERE2">LAST</field>
+                            <value name="STRING">
+                              <block type="variables_get" id="h17=Uep1/B8X+$A*ozx3">
+                                <field name="VAR" id="9p=y^o3Q9D#i[*`~t8Qd">commandwithprefix</field>
+                              </block>
+                            </value>
+                            <value name="AT1">
+                              <block type="math_arithmetic" id="zMrmYg}ltkz~B:dd]rz}">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <shadow type="math_number" id=":0-MoF^cB]edp7KvQD!F">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="text_length" id="B7Hoy-?0PwUN)uQz2-x$">
+                                    <value name="VALUE">
+                                      <shadow type="text" id="EQ,{AN8:Pd9Xzc%y@@r*">
+                                        <field name="TEXT">abc</field>
+                                      </shadow>
+                                      <block type="variables_get" id="Oh^urZbwt%S(?:4fRptd">
+                                        <field name="VAR" id="=6`ushn0ewC41R$-^dvJ">prefix</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <shadow type="math_number" id="g@Q2d^jm*|VId)}Yl^:C">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="controls_if" id="3XA36VU);D_1N5vf9p(Z">
+                            <value name="IF0">
+                              <block type="logic_compare" id="1igBlMs)G_=BaFXSd3rc">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="variables_get" id="764~nc#(*|4bhyY/,K{h">
+                                    <field name="VAR" id="dN-GQox{6nqmX%so5NT^">command</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="text" id="[P2gt2r%QKJF3|~Q$E~+">
+                                    <field name="TEXT">backup</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="controls_if" id="y7*,jP4FQwYJKT[-sR{Y">
+                                <mutation else="1"></mutation>
+                                <value name="IF0">
+                                  <block type="s4d_member_has_permission" id="@[V-twkuXd.N]7bCnM1d">
+                                    <field name="PERMISSION">MANAGE_GUILD</field>
+                                    <value name="MEMBER">
+                                      <block type="s4d_message_author" id=".;eMm4bAv52Z?hRtTI#c"></block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="controls_if" id="KFv4dr;T?y7[@~xMP!~T">
+                                    <value name="IF0">
+                                      <block type="logic_compare" id="TJiXuJ|Ixa}*p~T(SMc0">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="lists_getIndex" id="!dBw*h158BaKBTd4muml">
+                                            <mutation statement="false" at="true"></mutation>
+                                            <field name="MODE">GET</field>
+                                            <field name="WHERE">FROM_START</field>
+                                            <value name="VALUE">
+                                              <block type="variables_get" id="@+RzePw.Cg+k`%~ef6m^">
+                                                <field name="VAR" id="OZ0l|^XRQH?T?s;b$B%X">arguments</field>
+                                              </block>
+                                            </value>
+                                            <value name="AT">
+                                              <block type="math_number" id="(@dfBQ!N4Kh5YwlJ,4r`">
+                                                <field name="NUM">1</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="text" id="Wy#!v9J4;Xx@K6kepUEv">
+                                            <field name="TEXT">create</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="s4d_create_backup_of_guild_then" id="wt9u3]#lx)s^o@7$=pQs">
+                                        <value name="GUILD">
+                                          <block type="s4d_message_guild" id="L;I-Z_7rjnMld`Jz[4E:"></block>
+                                        </value>
+                                        <statement name="THEN">
+                                          <block type="s4d_send_member" id="m{*2DLA51F;v#9ZFf~Pi">
+                                            <value name="CONTENT">
+                                              <block type="text_join" id="OdHZS70Ue+NR)@^M8OfI">
+                                                <mutation items="2"></mutation>
+                                                <value name="ADD0">
+                                                  <block type="text_multiline" id="1O5_,;kvN%/Nyg)Z#)y]">
+                                                    <field name="TEXT">here is your guild backup id! </field>
+                                                  </block>
+                                                </value>
+                                                <value name="ADD1">
+                                                  <block type="s4d_backup_id" id="%bBfGz%cezL}rQ3#Oy^N"></block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="MEMBER">
+                                              <block type="s4d_message_author" id=".|YJ*Z]0np1bcHFUOrx."></block>
+                                            </value>
+                                            <next>
+                                              <block type="controls_if" id="0MF=T#yk%XO_*!w`1xxO">
+                                                <mutation else="1"></mutation>
+                                                <value name="IF0">
+                                                  <block type="logic_compare" id=".*iPB]zR_$v.Cd`}EDov">
+                                                    <field name="OP">GT</field>
+                                                    <value name="A">
+                                                      <block type="lists_length" id=";KbR=q=K.RE1Is2+uH#O">
+                                                        <value name="VALUE">
+                                                          <block type="variables_get" id="3:_Bs-A%vv9s=,]TtRCm">
+                                                            <field name="VAR" id="0bLfwJ^4=JPmkY,iA3b4">backups</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_number" id="g2y}W#`p3s8VD*?.(*1:">
+                                                        <field name="NUM">0</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <statement name="DO0">
+                                                  <block type="s4d_set_data" id="uIMDl9wo|[-`p9,B]Gtf">
+                                                    <value name="KEY">
+                                                      <shadow type="text" id="pC%{z8s{e*Z;TUhc|~LW">
+                                                        <field name="TEXT">backups</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="VALUE">
+                                                      <shadow type="text" id="@@%JUbP9OBU@m/EVf#np">
+                                                        <field name="TEXT">world</field>
+                                                      </shadow>
+                                                      <block type="lists_create_with" id="kem+39Ci3XZa@No6%kbE">
+                                                        <mutation items="2"></mutation>
+                                                        <value name="ADD0">
+                                                          <block type="s4d_backup_id" id="_55|eRm0A|pP(f.561q?"></block>
+                                                        </value>
+                                                        <value name="ADD1">
+                                                          <block type="lists_split" id="=r%!nyj,^~ZYFbN3rFtp">
+                                                            <mutation mode="JOIN"></mutation>
+                                                            <field name="MODE">JOIN</field>
+                                                            <value name="INPUT">
+                                                              <block type="s4d_get_data" id="BJrGv=lUXz[KAEv]x,,x">
+                                                                <value name="KEY">
+                                                                  <shadow type="text" id="]wG5ZDJP@F@FTdP~C*vr">
+                                                                    <field name="TEXT">backups</field>
+                                                                  </shadow>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <value name="DELIM">
+                                                              <shadow type="text" id="PlchjUuE3@Z7Q^K@$XLr">
+                                                                <field name="TEXT">\n</field>
+                                                              </shadow>
+                                                              <block type="s4d_newline" id="GB?Ag.6`)@YW0Q:Sqt`,"></block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </statement>
+                                                <statement name="ELSE">
+                                                  <block type="s4d_set_data" id="fpS[`O)8@J.uDo^C+Siy">
+                                                    <value name="KEY">
+                                                      <shadow type="text" id="{G7zbBc/@LWat1t^x3uc">
+                                                        <field name="TEXT">backups</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="VALUE">
+                                                      <shadow type="text" id="@@%JUbP9OBU@m/EVf#np">
+                                                        <field name="TEXT">world</field>
+                                                      </shadow>
+                                                      <block type="lists_create_with" id="ytnM@kh?9..7m2q#F03o">
+                                                        <mutation items="1"></mutation>
+                                                        <value name="ADD0">
+                                                          <block type="s4d_backup_id" id="-xtPqHBmo@-~K}cFpSsE"></block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </statement>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="controls_if" id="$hM-:K:O{2bCU$ZKHLoG">
+                                        <value name="IF0">
+                                          <block type="logic_compare" id="_IRA[!Tcc%-aZe3_3)Bh">
+                                            <field name="OP">EQ</field>
+                                            <value name="A">
+                                              <block type="lists_getIndex" id="z_iV^VA;[ecPhgFRf?Wl">
+                                                <mutation statement="false" at="true"></mutation>
+                                                <field name="MODE">GET</field>
+                                                <field name="WHERE">FROM_START</field>
+                                                <value name="VALUE">
+                                                  <block type="variables_get" id="9T7+oiXqMp:u/O`G|zyd">
+                                                    <field name="VAR" id="OZ0l|^XRQH?T?s;b$B%X">arguments</field>
+                                                  </block>
+                                                </value>
+                                                <value name="AT">
+                                                  <block type="math_number" id="pe8Lv7IdyY3=hYp!FX}P">
+                                                    <field name="NUM">1</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="text" id="eGBl%FNo}]RMW6[!tcgO">
+                                                <field name="TEXT">load</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO0">
+                                          <block type="variables_set" id="QZ#s$k:nV}[uS_$^-d^)">
+                                            <field name="VAR" id="0bLfwJ^4=JPmkY,iA3b4">backups</field>
+                                            <value name="VALUE">
+                                              <block type="s4d_get_data" id="yBw`Odp?Q`l=V(y9wXD_">
+                                                <value name="KEY">
+                                                  <shadow type="text" id="hRHKUPRJg`iTcTOa`8U=">
+                                                    <field name="TEXT">backups</field>
+                                                  </shadow>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="controls_if" id="/D#j/ry#SHf6vD*9bdWV">
+                                                <mutation else="1"></mutation>
+                                                <value name="IF0">
+                                                  <block type="logic_compare" id="feE(GtEzHv5D:/2yv{#;">
+                                                    <field name="OP">GT</field>
+                                                    <value name="A">
+                                                      <block type="lists_length" id="CBjAMII)e(E[#|8w=r5+">
+                                                        <value name="VALUE">
+                                                          <block type="variables_get" id="p,tEBL,8e3cs_6E~6}Cr">
+                                                            <field name="VAR" id="0bLfwJ^4=JPmkY,iA3b4">backups</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_number" id="*Fku=$8BTG7FO-YYox%Y">
+                                                        <field name="NUM">0</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <statement name="DO0">
+                                                  <block type="controls_if" id="=QqwPBi2ua;R6mb#%q/f">
+                                                    <mutation else="1"></mutation>
+                                                    <value name="IF0">
+                                                      <block type="list_contains" id="jbu-8bGB2{j,dY!#d?%R">
+                                                        <value name="LIST">
+                                                          <block type="variables_get" id="kbZj9g/n]g;@gMB/,ypR">
+                                                            <field name="VAR" id="0bLfwJ^4=JPmkY,iA3b4">backups</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="NAME">
+                                                          <block type="lists_getIndex" id="whvbVW$oMI*AopcB}^ZL">
+                                                            <mutation statement="false" at="true"></mutation>
+                                                            <field name="MODE">GET</field>
+                                                            <field name="WHERE">FROM_START</field>
+                                                            <value name="VALUE">
+                                                              <block type="variables_get" id="Iggn)yX2D!)HkGgSfAB2">
+                                                                <field name="VAR" id="OZ0l|^XRQH?T?s;b$B%X">arguments</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="AT">
+                                                              <block type="math_number" id="~;w#wYtP@IvvR2tgVh=s">
+                                                                <field name="NUM">2</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <statement name="DO0">
+                                                      <block type="s4d_reply" id="8I~Fjmk7,0@veU,YQb5z">
+                                                        <value name="CONTENT">
+                                                          <shadow type="text" id="VKq5=:2{JUovf5ZZoeI.">
+                                                            <field name="TEXT">Loading...</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <next>
+                                                          <block type="s4d_backup_load" id="t;Ku|GPlj8c;=sU.q{iK">
+                                                            <value name="GUILD">
+                                                              <block type="s4d_message_guild" id="VvWhc$t)O4)i:-_(x`6,"></block>
+                                                            </value>
+                                                            <value name="ID">
+                                                              <block type="lists_getIndex" id="._/V9EPU@pVL5maW3O}C">
+                                                                <mutation statement="false" at="true"></mutation>
+                                                                <field name="MODE">GET</field>
+                                                                <field name="WHERE">FROM_START</field>
+                                                                <value name="VALUE">
+                                                                  <block type="variables_get" id="yc5}s=gAS}g2[8Q|kA{1">
+                                                                    <field name="VAR" id="OZ0l|^XRQH?T?s;b$B%X">arguments</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="AT">
+                                                                  <block type="math_number" id="{ZE/56WYR-rClV;t`E{,">
+                                                                    <field name="NUM">2</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <statement name="BUTTONS">
+                                                              <block type="s4d_send_member" id="O-z%8zO`_#l$xEOl^,ly">
+                                                                <value name="CONTENT">
+                                                                  <block type="text" id="5!aHKLLETaX.Io?0gAO?">
+                                                                    <field name="TEXT">finished loading!</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="MEMBER">
+                                                                  <block type="s4d_message_author" id="_~;anbF6/UKY-4t7m{=."></block>
+                                                                </value>
+                                                              </block>
+                                                            </statement>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                    <statement name="ELSE">
+                                                      <block type="s4d_reply" id="x,NqmMtyUJSIu.sib@e%">
+                                                        <value name="CONTENT">
+                                                          <shadow type="text" id="6he:u;hE/#%a;#A[UIFW">
+                                                            <field name="TEXT">No backup Found!</field>
+                                                          </shadow>
+                                                        </value>
+                                                      </block>
+                                                    </statement>
+                                                  </block>
+                                                </statement>
+                                                <statement name="ELSE">
+                                                  <block type="s4d_reply" id="~F@87T{0XopbV618E@*h">
+                                                    <value name="CONTENT">
+                                                      <shadow type="text" id="mci*y9#cvpGa;|F1tUBX">
+                                                        <field name="TEXT">No backup Found!</field>
+                                                      </shadow>
+                                                    </value>
+                                                  </block>
+                                                </statement>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="controls_if" id="!Qs-+|4dRl=F8+a3FAvm">
+                                            <value name="IF0">
+                                              <block type="logic_compare" id="+z^tuO318NVnnjyRZbFh">
+                                                <field name="OP">EQ</field>
+                                                <value name="A">
+                                                  <block type="lists_getIndex" id="E0B6pV.`OfDkl]yf!+VR">
+                                                    <mutation statement="false" at="true"></mutation>
+                                                    <field name="MODE">GET</field>
+                                                    <field name="WHERE">FROM_START</field>
+                                                    <value name="VALUE">
+                                                      <block type="variables_get" id="!-QVw5KU?I*.PtTX3%:Y">
+                                                        <field name="VAR" id="OZ0l|^XRQH?T?s;b$B%X">arguments</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="AT">
+                                                      <block type="math_number" id="A{Ef@fF~A?1)zR2dGAwc">
+                                                        <field name="NUM">1</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="text" id="h.UgjS]vco*!syXc*t,k">
+                                                    <field name="TEXT">delete</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <statement name="DO0">
+                                              <block type="variables_set" id="@[g4NG#vYV.DPvrW.ZxU">
+                                                <field name="VAR" id="0bLfwJ^4=JPmkY,iA3b4">backups</field>
+                                                <value name="VALUE">
+                                                  <block type="s4d_get_data" id="c[09O1l:`:Gv3O$L!$H!">
+                                                    <value name="KEY">
+                                                      <shadow type="text" id="IB]P}I=10*+isFzpUst]">
+                                                        <field name="TEXT">backups</field>
+                                                      </shadow>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="controls_if" id="fNr_o3-4p:~u+T_t2MoO">
+                                                    <mutation else="1"></mutation>
+                                                    <value name="IF0">
+                                                      <block type="logic_compare" id="Q/MOGv0$%CteTv0YXSy(">
+                                                        <field name="OP">GT</field>
+                                                        <value name="A">
+                                                          <block type="lists_length" id="0/y%*sjM=;O[AW8l;r^m">
+                                                            <value name="VALUE">
+                                                              <block type="variables_get" id="`hM|,|!gs6I#CbEKeqkL">
+                                                                <field name="VAR" id="0bLfwJ^4=JPmkY,iA3b4">backups</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <block type="math_number" id="jDaZl,cHmqC=|hdAf;S?">
+                                                            <field name="NUM">0</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <statement name="DO0">
+                                                      <block type="controls_if" id="3!kU%j_gFls5t,v#oKKj">
+                                                        <mutation else="1"></mutation>
+                                                        <value name="IF0">
+                                                          <block type="list_contains" id="U/g#]k+8L^GauT,1D)J?">
+                                                            <value name="LIST">
+                                                              <block type="variables_get" id="wGS+2MrpDyE,FSr2uUp^">
+                                                                <field name="VAR" id="0bLfwJ^4=JPmkY,iA3b4">backups</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="NAME">
+                                                              <block type="lists_getIndex" id="-*sc{;]Q2V:_-kHr@3:2">
+                                                                <mutation statement="false" at="true"></mutation>
+                                                                <field name="MODE">GET</field>
+                                                                <field name="WHERE">FROM_START</field>
+                                                                <value name="VALUE">
+                                                                  <block type="variables_get" id="[Hp,N#of)RqG{M9iO0h1">
+                                                                    <field name="VAR" id="OZ0l|^XRQH?T?s;b$B%X">arguments</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="AT">
+                                                                  <block type="math_number" id="Ucwh%D[=N|F+lC}f4yW)">
+                                                                    <field name="NUM">2</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <statement name="DO0">
+                                                          <block type="s4d_delete_backup" id="qGdMP|_$Pi1{pV:Hi,yi">
+                                                            <value name="ID">
+                                                              <block type="lists_getIndex" id="f]ZLsY4i#;ygx*Yh!ntB">
+                                                                <mutation statement="false" at="true"></mutation>
+                                                                <field name="MODE">GET</field>
+                                                                <field name="WHERE">FROM_START</field>
+                                                                <value name="VALUE">
+                                                                  <block type="variables_get" id="^%Ni;V(Tl;%OxM60;9!e">
+                                                                    <field name="VAR" id="OZ0l|^XRQH?T?s;b$B%X">arguments</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="AT">
+                                                                  <block type="math_number" id="FM!C]*/Q|aoXSyV49oJ=">
+                                                                    <field name="NUM">2</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="s4d_reply" id="Eu)pr-o}c)TX`+-S,Q-l">
+                                                                <value name="CONTENT">
+                                                                  <shadow type="text" id="fu-{!cxx4#mH61l.lg~C">
+                                                                    <field name="TEXT">Deleted Backup!</field>
+                                                                  </shadow>
+                                                                </value>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </statement>
+                                                        <statement name="ELSE">
+                                                          <block type="s4d_reply" id="[?ys;OQ?5w%,YLOo_7X9">
+                                                            <value name="CONTENT">
+                                                              <shadow type="text" id="gdt*q:xh.9)g+0r9Zc,;">
+                                                                <field name="TEXT">No backup Found!</field>
+                                                              </shadow>
+                                                            </value>
+                                                          </block>
+                                                        </statement>
+                                                      </block>
+                                                    </statement>
+                                                    <statement name="ELSE">
+                                                      <block type="s4d_reply" id="yCO09Z40]a*7RK4bGZI2">
+                                                        <value name="CONTENT">
+                                                          <shadow type="text" id="N?[=j]SAWN:BOfa72s[9">
+                                                            <field name="TEXT">No backup Found!</field>
+                                                          </shadow>
+                                                        </value>
+                                                      </block>
+                                                    </statement>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </statement>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <statement name="ELSE">
+                                  <block type="s4d_reply" id="q-Vep!8AmYr0[5;2p#;}">
+                                    <value name="CONTENT">
+                                      <shadow type="text" id="bU[jstcFLIu$a]H/6hug">
+                                        <field name="TEXT">no perm</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </statement>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="oqc2XvM=IP*`eYpqd_Y6" x="1628" y="1053">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="e%uFfe|g0$(DTVc=/~Ed">
+        <value name="IF0">
+          <block type="logic_compare" id="46/=-2JkYPTgF2mok`#x">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_message_content" id="O-UxFak!g;w~Pc/[vK/Y"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="?}W|V;Gio7rd`Ib=w:P{">
+                <field name="TEXT">!uptime</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="variables_set" id="?Z?$wK*jU!~D!_BEk2.7">
+            <field name="VAR" id="[7EY2U|H!lFwE*bfnrI|">uptime_var</field>
+            <value name="VALUE">
+              <block type="math_arithmetic" id="[TP#@Ek/KJYA(:::;,]3">
+                <field name="OP">DIVIDE</field>
+                <value name="A">
+                  <shadow type="math_number" id="Wo5!)VgL=;j[v~A_nDE7">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="jg_s4duptime" id="yXIeUHvmU+gS]rPvfx4U"></block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="C%NGJX.@E:g;c(K2sG^f">
+                    <field name="NUM">1000</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id="/8(?4;(X$p3pGW;T@B4o">
+                <mutation elseif="2" else="1"></mutation>
+                <value name="IF0">
+                  <block type="logic_compare" id="6Niu-LGBjbVDu6]3=:WA">
+                    <field name="OP">GT</field>
+                    <value name="A">
+                      <block type="variables_get" id="}TeS7~(;0dVT*jg,N_MS">
+                        <field name="VAR" id="[7EY2U|H!lFwE*bfnrI|">uptime_var</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="bBp!boG~Du/jJInx#b@I">
+                        <field name="NUM">86400</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="s4d_send_channel" id="u0Bovu(|X64tvAIm1$Ig">
+                    <value name="CONTENT">
+                      <block type="text_join" id="#;M(T77RW%ajuiqYs=;;">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="i?/5I)g8VN,aXoTo!zS{">
+                            <field name="TEXT">Bot has been up for </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="math_arithmetic" id="l[{%8}+)f4leHmVG2EPG">
+                            <field name="OP">DIVIDE</field>
+                            <value name="A">
+                              <shadow type="math_number" id="g=T=mbrfp.wm3vL%3@P;">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="Y1WP1LQzr)!dQK^{8|Y9">
+                                <field name="VAR" id="[7EY2U|H!lFwE*bfnrI|">uptime_var</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="LP!gy{U:u6N+(gw(FXS9">
+                                <field name="NUM">86400</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="text" id="!;p~R{WsPp[4p:4,Pbx;">
+                            <field name="TEXT"> day(s)!</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="CHANNEL">
+                      <block type="s4d_message_channel" id="G^e9C1bRSk_MDA8Nx1:%"></block>
+                    </value>
+                  </block>
+                </statement>
+                <value name="IF1">
+                  <block type="logic_compare" id="VY|A;pTPj)MUW}?l$6{A">
+                    <field name="OP">GT</field>
+                    <value name="A">
+                      <block type="variables_get" id="k$K;A9.6,3`2(cLm#zrc">
+                        <field name="VAR" id="[7EY2U|H!lFwE*bfnrI|">uptime_var</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="j$M?xpw9AcX+r2v!+/?O">
+                        <field name="NUM">3600</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO1">
+                  <block type="s4d_send_channel" id="}~UtL;S}!z~^N+%S198T">
+                    <value name="CONTENT">
+                      <block type="text_join" id="Wi29%8YGwg9Y-#FZ|o23">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="C}6k+*lR(]#Ncs7kG981">
+                            <field name="TEXT">Bot has been up for </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="math_arithmetic" id="V64I/|X;8is@`0Jq8^yp">
+                            <field name="OP">DIVIDE</field>
+                            <value name="A">
+                              <shadow type="math_number" id="g=T=mbrfp.wm3vL%3@P;">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="=dSoTqIpiImR}#j[jLMd">
+                                <field name="VAR" id="[7EY2U|H!lFwE*bfnrI|">uptime_var</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="*v=O#PdmPpUm1rD!zgjm">
+                                <field name="NUM">3600</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="text" id="L.^3y;1w_iz^V:5XIuSL">
+                            <field name="TEXT"> hour(s)!</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="CHANNEL">
+                      <block type="s4d_message_channel" id="rnD.tDx!L.v.k}@T8%a{"></block>
+                    </value>
+                  </block>
+                </statement>
+                <value name="IF2">
+                  <block type="logic_compare" id="bbWt3Sb#,uot!Z)G~%j*">
+                    <field name="OP">GT</field>
+                    <value name="A">
+                      <block type="variables_get" id="LL=]ZEtyW[IF?ZyuV8ix">
+                        <field name="VAR" id="[7EY2U|H!lFwE*bfnrI|">uptime_var</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id=")MHtNmP*eu=!#N.L7A)8">
+                        <field name="NUM">60</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO2">
+                  <block type="s4d_send_channel" id="_,p6I/@K97SV,|?.7q!;">
+                    <value name="CONTENT">
+                      <block type="text_join" id="Ejpb@N8(ip|`I+WGdJfj">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id=",Q0G,kv@sp7V8(eM.W:q">
+                            <field name="TEXT">Bot has been up for </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="math_arithmetic" id="]w{GdFmoL!~0i||{#61k">
+                            <field name="OP">DIVIDE</field>
+                            <value name="A">
+                              <shadow type="math_number" id="g=T=mbrfp.wm3vL%3@P;">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="pyr[D89T+G?DKGN)[c/2">
+                                <field name="VAR" id="[7EY2U|H!lFwE*bfnrI|">uptime_var</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="$ETN6|M+LubsIBjAWiY0">
+                                <field name="NUM">60</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="text" id="(C,;gwW$$Qb?(GqMxPHK">
+                            <field name="TEXT"> min(s)!</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="CHANNEL">
+                      <block type="s4d_message_channel" id="=#By.+8L*@^]j]8??IEe"></block>
+                    </value>
+                  </block>
+                </statement>
+                <statement name="ELSE">
+                  <block type="s4d_send_channel" id="j~UU+jo.[_T}*[eopB?,">
+                    <value name="CONTENT">
+                      <block type="text_join" id="~TIZJ1q$DQhQD41o#WH)">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="ZE!u8(.mdjxz;)9(h2.}">
+                            <field name="TEXT">Bot has been up for </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="variables_get" id="N`H(;r,Q;X_=(-8Wtn|N">
+                            <field name="VAR" id="[7EY2U|H!lFwE*bfnrI|">uptime_var</field>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="text" id="{SY0pH:x52nBXPz^us^w">
+                            <field name="TEXT"> seconds!</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="CHANNEL">
+                      <block type="s4d_message_channel" id="}A_wExi*I8)E2z,VFC`T"></block>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
